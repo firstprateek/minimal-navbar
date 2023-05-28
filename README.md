@@ -1,4 +1,4 @@
-# hamburger-btn
+# minimal-navbar
 
 A simple yet powerful Navigation Bar web-component that can be added to your website to navigate between web pages.
 
