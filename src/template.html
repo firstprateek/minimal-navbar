@@ -7,10 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+    <script defer>
+      addEventListener("DOMContentLoaded", (event) => {
+        const $navbar = document.querySelector('minimal-navbar');
+        const $main = document.querySelector('main');
+
+        $navbar.addEventListener('activeLinkChanged', (event) => {
+          $main.innerHTML = '';
+          
+          const p = document.createElement('p');
+          p.textContent = JSON.stringify(event.detail);
+
+          $main.appendChild(p);
+        });
+      });
+    </script>
   </head>
   <body>
-    <main>
-      <h1>Hello World</h1>
-    </main>
+    <minimal-navbar>
+      <a slot="brand">Prateek</a>
+      <a slot="link">Home</a>
+      <a slot="link">Resume</a>
+      <a slot="link">Contact</a>
+    </minimal-navbar>
+    <main></main>
   </body>
 </html>

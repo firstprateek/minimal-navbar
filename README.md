@@ -1,26 +1,48 @@
-# wepack-starter-template
+# hamburger-btn
 
-A minimal starter project for building frontend applications, bundled using Webpack 5.
+A webcomponent for a hamburger menu button developed using [LIT](https://lit.dev/)
 
-## Getting started
+## Live Demo
 
-Install dependencies (incl. webpack). Note: This project only defines dev dependencies.
+[Demo](https://firstprateek.github.io/hamburger-btn/)
+
+## Installation
 
 ```bash
-npm i
+npm install hamburger-btn --save
 ```
 
-Entry point is src/index.js. Built content is stored under dist/. To build your project, run:
-```bash
-npm run build
+## Usage
+
+```js
+// In index.js
+import HamburgerBtn from 'hamburger-btn';
 ```
 
-To launch development server, run:
-```bash
-npm run dev
+```jsx
+<!DOCTYPE html>
+<head>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <main>
+        <hamburger-btn></hamburger-btn>
+    </main>
+</body>
+</html>
 ```
 
-To deploy the built index.html page to the project's github page `https://<username>.github.io/<project-name>/`, run:
-```bash
-npm run deploy
+```js
+/**
+ * HamburgerButton widget: <hamburger-btn></hamburger-btn>.
+ * 
+ * This widget is a hamburger button that changes into a cross button upon click.
+ * 
+ * @property hidden {Boolean}. If false then button is hidden.
+ * @property open {Boolean}. If true then the stripes change into a cross.
+ * 
+ * @fires click - Indicates when the button is clicked. The open property is toggled when button is clicked.
+ * 
+ * @cssproperty --hamburger-stripe-color - This variable controls the color of the stripes
+ */
 ```
